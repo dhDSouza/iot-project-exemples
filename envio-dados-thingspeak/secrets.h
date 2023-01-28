@@ -1,0 +1,5 @@
+#define SECRET_SSID "MySSID"
+#define SECRET_PASS "MyPassword"
+
+#define SECRET_CH_ID 000000
+#define SECRET_WRITE_APIKEY "XYZ"
