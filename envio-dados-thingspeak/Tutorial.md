@@ -1,5 +1,5 @@
-# Exemplo de envio de dados ao ThingSpek
-
+# Exemplo de envio de dados ao ThingSpeak
+---
 ## Ferramentas utilizadas no projeto
 
 - **ThingSpeak**
@@ -10,20 +10,26 @@
 
 _O **ThingSpeak** é uma plataforma de análise de IoT que permite agregar, visualizar e analisar fluxos de dados ao vivo na nuvem. Você pode enviar dados para o ThingSpeak de seus dispositivos, criar visualização instantânea de dados ao vivo e enviar alertas._
 
+- [Site oficial ThingSpeak](https://thingspeak.com/)
+
 ### Arduino IDE
 
 _**Arduino Integrated Development Environment** é uma aplicação de plataforma cruzada, escrito em funções de C e C ++. É usado para escrever e fazer upload de programas em placas compatíveis com Arduino, mas também, com a ajuda de núcleos de terceiros, outras placas de desenvolvimento de fornecedores._
+
+- [Site oficial do Arduino](https://www.arduino.cc/)
 
 ### ESP32
 
 *O Módulo ESP32 é um chip microcontrolador desenvolvido pela empresa chinesa **Espressif**. Por possuir Wi-Fi e Bluetooth integrado, esse chip chegou para revolucionar o mercado maker e facilitar as aplicações com projetos IoT, por suas características técnicas e por seu preço acessível.*
 
+- [Site oficial da Espressif](https://www.espressif.com/)
+---
 ## Sobre o projeto
-
+---
 *Este projeto consiste em gerar dados aleatórios em linguagem **C++** e através de um microcontrolador ESP32, realizar conexão a internet e a integração com a plataforma em nuvem ThingSpeak. A plataforma, receberá os dados gerados atráves do ESP32 e realizará a demonstração destes em tempo real em um gráfico.*
-
+---
 ## Explicação do código
-
+---
 ### Secrects.h
 
 ```c++
@@ -167,3 +173,56 @@ void loop() {
    - Senão escreve a mensagem "Erro de requisição HTTP: " e o código retornado.
 
 Após isso o programa gera novamente números aleatórios para as variáveis, e aguada 20 segundos _"tempo necessário para que o **ThingSpeak** recebá outra requisição"_.
+---
+## Utilização do ThingSpeak
+---
+Para a realização deste projeto, é necessário também que algumas configurações sejam realizadas na plataforma **ThingSpeak** para isso acesse o stie [ThingSpeak](https://thingspeak.com/) e crie uma conta, caso ainda não tenha.
+
+(!)[Tela inicial do site](thingspeak-home.png)
+
+Na tela inicial do site, clique no botão "Channels", ele irá reredicionar para a tela de canais do ThingSpeak.
+Na tela seguinte "My Channels" clique no botão "New Channel".
+
+(!)[Tela de configuração do canal](config-channel.png)
+
+Nesta tela são feitas configurações do canal, tais como, nome, descrição, quantidade de campos, nome dos campos, etc.
+
+**_Para a execução deste projeto é são utilizados dois campos, especificamente os campos 1 e 2, pois foi a numeração passada no código._**
+
+(!)[Tela incial do canal](channel-charts.png)
+
+Para este exemplo, na tela de configuração o campo um foi nomeado "Temperatura" e o campo dois "Umidade". Por padrão o **ThingSpeak** gera automaticamente gráficos para cada um dos campos configurados.
+
+No cabeçalho dos gráficos, existe uma série de opções, clique no símbolo do lapis, irá abrir configurações do gráfico.
+
+(!)[Configurações do gráfico](chart-config.png)
+
+Nesta tela é possível fazer uma série de configurações para o gráfico, como título, cor do fundo, cor do gráfico, limite em X, limite em Y, e tipo de gráfico.
+
+Os tipos suportados são:
+
+- Line
+- Bar
+- Column
+- Spline
+- Step
+
+(!)[Chaves de acesso](api-keys.png)
+
+Depois de configurados os gráficos, clique na aba "API Keys" nela contém as informações mais importantes para o desenvolvimento.
+
+### Informações importantes
+
+- [x] Channel ID
+- [ ] Author 
+- [ ] Access
+- [x] Write API Key
+- [ ] Read API key
+
+**_Para este projeto utilizaremos apenas estas duas informações!_**
+**_Elas devem ser passadas para o arquivo "scrects.h"_**
+
+### Pronto! Se tudo deu certo é só compilar o código, e visualizar os gráficos atualizando em tempo real no ThingSpeak!
+
+(!)[Gráficos em tempo real](Dados.gif)
+---
