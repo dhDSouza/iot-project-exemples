@@ -176,7 +176,7 @@ Na estrutura condicional é testado se x é igual a 200 _"número que retorna do
 
 Após isso o programa gera novamente números aleatórios para as variáveis, e aguada 20 segundos _"tempo necessário para que o **ThingSpeak** recebá outra requisição"_.
 
-**OBS: O protocolo HTTP possuí diversos retornos para suas requisições, alguns dos mais recorrentes estão disponibilizados na tabela abaixo.***
+**OBS: O protocolo HTTP possuí diversos retornos para suas requisições, alguns dos mais recorrentes estão disponibilizados na tabela abaixo.**
 
 **Status** | **Resposta**
 ---------- | ------------
@@ -200,24 +200,24 @@ _Destaque especial aos status 200, 404 e 500 que são os três mais recorrentes 
 
 Para a realização deste projeto, é necessário também que algumas configurações sejam realizadas na plataforma **ThingSpeak** para isso acesse o stie [ThingSpeak](https://thingspeak.com/) e crie uma conta, caso ainda não tenha.
 
-![Tela inicial do site](thingspeak-home.png)
+![Tela inicial do site](assets/thingspeak-home.png)
 
 Na tela inicial do site, clique no botão "Channels", ele irá reredicionar para a tela de canais do ThingSpeak.
 Na tela seguinte "My Channels" clique no botão "New Channel".
 
-![Tela de configuração do canal](config-channel.png)
+![Tela de configuração do canal](assets/config-channel.png)
 
 Nesta tela são feitas configurações do canal, tais como, nome, descrição, quantidade de campos, nome dos campos, etc.
 
 **_Para a execução deste projeto é são utilizados dois campos, especificamente os campos 1 e 2, pois foi a numeração passada no código._**
 
-![Tela incial do canal](channel-charts.png)
+![Tela incial do canal](assets/channel-charts.png)
 
 Para este exemplo, na tela de configuração o campo um foi nomeado "Temperatura" e o campo dois "Umidade". Por padrão o **ThingSpeak** gera automaticamente gráficos para cada um dos campos configurados.
 
 No cabeçalho dos gráficos, existe uma série de opções, clique no símbolo do lapis, irá abrir configurações do gráfico.
 
-![Configurações do gráfico](chart-config.png)
+![Configurações do gráfico](assets/chart-config.png)
 
 Nesta tela é possível fazer uma série de configurações para o gráfico, como título, cor do fundo, cor do gráfico, limite em X, limite em Y, e tipo de gráfico.
 
@@ -229,7 +229,7 @@ Os tipos suportados são:
 - Spline
 - Step
 
-![Chaves de acesso](api-keys.png)
+![Chaves de acesso](assets/api-keys.png)
 
 Depois de configurados os gráficos, clique na aba "API Keys" nela contém as informações mais importantes para o desenvolvimento.
 
@@ -246,5 +246,5 @@ Depois de configurados os gráficos, clique na aba "API Keys" nela contém as in
 
 ### Pronto! Se tudo deu certo é só compilar o código, e visualizar os gráficos atualizando em tempo real no ThingSpeak!
 
-![Gráficos em tempo real](Dados.gif)
+![Gráficos em tempo real](assets/graficos.gif)
 ---
