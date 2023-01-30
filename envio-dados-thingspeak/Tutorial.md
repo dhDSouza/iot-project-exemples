@@ -70,7 +70,7 @@ int number2 = random(0,100);
 Tarefas realizadas no trecho de código acima:
 
 1. Importar dados registrados no arquivo "secrets.h" para as variáveis locais.
-2. Instânciar a classe WiFiClient da biblioteca "WiFi.h", reponsável por realizar a conexão com a internet.
+2. Instânciar a classe `WiFiClient` da biblioteca `<WiFi.h>`, reponsável por realizar a conexão com a internet.
 3. Inicializar as variáveis que serão enviadas a plataforma na nuvem, de maneira aleatória através da função random.
 
 ```c++
@@ -88,10 +88,10 @@ void setup() {
 
 **Método setup():** É o módulo normalmente utilizado para realizar as configurações iniciais do mricocontrolador utilizado. Este módulo é obrigatório para a compilação do código. _(Mesmo que seja vazio)._
 
-A função "Serial.begin(115200)" é utilizada pra fazer a inicialização da porta serial da placa utilizada. A porta serial pode ser muito útil no desenvolviemento de aplicações pra microcontroladores, pois pode ser utilizada pra debug, além de entrada e saída de dados.
+A função `Serial.begin(115200)` é utilizada pra fazer a inicialização da porta serial da placa utilizada. A porta serial pode ser muito útil no desenvolviemento de aplicações pra microcontroladores, pois pode ser utilizada pra debug, além de entrada e saída de dados.
 
-A função "WiFi.mode(WIFI_STA)" inicializa o WiFi da placa no mode "STATION" ou seja, a ESP32 terá de se conectar a uma estação de Wi-Fi.
-A função "ThingSpeak.begin(client)" serve para realizar a integração entre a placa de desenvolviemento e a plataforma **ThingSpeak** através do protocolo _HTTP_ passando como parâmetro a conexão.
+A função `WiFi.mode(WIFI_STA)` inicializa o WiFi da placa no mode "STATION" ou seja, a ESP32 terá de se conectar a uma estação de Wi-Fi.
+A função `ThingSpeak.begin(client)` serve para realizar a integração entre a placa de desenvolviemento e a plataforma **ThingSpeak** através do protocolo _HTTP_ passando como parâmetro a conexão.
 
 ```c++
 void loop() {
@@ -141,7 +141,7 @@ void loop() {
   }
   ```
 
-Esta parte inicial do código, realiza a conexão com a Wi-Fi e enquanto a conexão não for bem realizada com sucesso, o processo é repetido novamente com intervalos de 5 segundos, definido pela função "delay(5000)". 
+Esta parte inicial do código, realiza a conexão com a Wi-Fi e enquanto a conexão não for bem realizada com sucesso, o processo é repetido novamente com intervalos de 5 segundos, definido pela função `delay(5000)`. 
 
 _OBS: A função delay recebe como parâmetro o tempo em milisegundos, ou seja, 5000 é igual a 5 segundos._
 
@@ -166,7 +166,7 @@ Assim que é realizada a conexão o programa ecreve na saída serial a mensagem 
   delay(20000);
   ```
 
-A função "ThingSpeak.setField" recebe como parâmetro o número do campo _"configurado no canal criado na plataforma **ThingSpeak**"_ e o valor a ser publicado.
+A função `ThingSpeak.setField` recebe como parâmetro o número do campo _"configurado no canal criado na plataforma **ThingSpeak**"_ e o valor a ser publicado.
 
 A função "ThingSpeak.writeFields" recebe como parâmentro o número do canal e a chave de escrita _"configurados no arquivo secrets.h"_. Esta função retorna o Response do protocolo HTTP, que é atribuída a variável do tipo inteiro "x".
 
@@ -244,7 +244,7 @@ Depois de configurados os gráficos, clique na aba "API Keys" nela contém as in
 **_Para este projeto utilizaremos apenas estas duas informações!_**
 **_Elas devem ser passadas para o arquivo "scrects.h"_**
 
-### Pronto! Se tudo deu certo é só compilar o código, e visualizar os gráficos atualizando em tempo real no ThingSpeak!
+### Pronto! Se tudo deu certo é só compilar o código, e visualizar os gráficos atualizando em tempo real no ThingSpeak! :smiley:
 
 ![Gráficos em tempo real](assets/graficos.gif)
 ---
